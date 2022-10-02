@@ -17,10 +17,12 @@ class BoardLetreco {
 		$this->host = 'http://localhost:4444/wd/hub';
 	}
 
-	public function open()
+	public function open($incognito = true)
 	{
 		$this->options = new ChromeOptions();
-		$this->options->addArguments(["--incognito"]);
+		if ($incognito) {
+			$this->options->addArguments(["--incognito"]);
+		}
 
 		$this->browser = Facebook\WebDriver\Remote\DesiredCapabilities::chrome($this->options);
 		$this->browser->setCapability('chromeOptions', $this->options);

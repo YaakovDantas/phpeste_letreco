@@ -209,4 +209,12 @@ class Game {
 	{
 		return $this->board->checkWinGame();
 	}
+
+	public function finishHim($ultimate)
+	{
+		$this->finish();
+		$this->board->open(false);
+		$this->board->unlockBoard();
+		$this->board->makeGuess($ultimate);
+	}
 }

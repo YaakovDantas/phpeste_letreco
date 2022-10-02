@@ -26,7 +26,6 @@ $board = $board_options[$board];
 
 $game = new Game($board, $badWords, $word, $wordSearch, $isTryHard);
 $game->play();
-$wordOfTheDay = strtoupper($game->getLastGuessedWord());
 
 echo PHP_EOL;
 
@@ -36,7 +35,9 @@ echo '-----------' . PHP_EOL;
 
 echo PHP_EOL;
 if ($game->checkWin()) {
-  
+
+  $wordOfTheDay = strtoupper($game->getLastGuessedWord());
+  $game->finishHim($game->getLastGuessedWord());
   echo '---------------------------' . PHP_EOL;
   echo "- PALAVRA DO DIA : $wordOfTheDay -" . PHP_EOL;
   echo '---------------------------' . PHP_EOL;
@@ -45,7 +46,7 @@ if ($game->checkWin()) {
   echo '---------------------------' . PHP_EOL;
   echo "---------- PERDEU ---------" . PHP_EOL;
   echo '---------------------------' . PHP_EOL;
+  $game->finish();
 }
 echo PHP_EOL;
 
-$game->finish();
