@@ -18,7 +18,7 @@
 
 ###### Run this command in a second terminal tab, and let it running.
 
-`java -jar selenium-server-standalone-3.141.59.jar`
+`java -jar selenium-server-standalone-3.5.3.jar`
 
 5° Get the latest [Chrome](https://chromedriver.chromium.org/downloads) driver
 
