@@ -1,0 +1,6 @@
+{
+    "require": {
+        "php-webdriver/webdriver": "^1.7",
+        "guzzlehttp/guzzle": "^7.0"
+    }
+}
